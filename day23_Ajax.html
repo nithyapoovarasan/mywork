@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head> 
+<body>
+    <p id="demo">Table Details</p>
+    <div class="details">
+	<table border="3" id="">
+		<tr>
+			<td>Fullname</td>
+			<td><span id="fullname"></span></td>
+			<td><button id=""> edit </button></td>
+        </tr>
+			
+		
+		<tr>
+		<td>Login</td>
+		<td><span id="login"></span></td>
+		</tr>
+        <tr>
+		<td>ID</td>
+		<td><span id="age"></span></td>
+		</tr>
+		<tr>
+		<td>Location</td>
+		<td><span id="location"></span></td>
+		</tr>
+		<tr>
+		<td>Bio-Data</td>
+		<td><span id="bio"></span></td>
+		</tr>
+	</table>
+	</div>
+
+
+<script>
+    $(document).ready(function(){
+        $.ajax({
+        url :"https://api.github.com/users/ayushsnha",
+        type :"GET",
+        success: function(e){
+        let {id,location,name,login,bio}=e;
+        document.querySelector("#fullname").innerText=name;   
+        document.querySelector("#age").innerText=id;   
+        document.querySelector("#bio").innerText=bio;   
+        document.querySelector("#login").innerText=login;   
+        document.querySelector("#location").innerText=location;   
+    },
+        error: function(e){console.log(e);}
+
+});
+
+        axios.get("https://api.github.com/users/ayushsnha")
+        .then((re)=>{console.log(re)})
+        .catch((er)=>{
+            console.log(er);
+        })
+                 $("#demo").hover(function(){
+                    $("#demo").hide();
+                })
+
+          })
+</script>
+
+</body>
+</html>
+
+
+				

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query </title>
+        <style>
+            .sec_h{
+                text-align: center;
+            }
+            .sec_container{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .img_holders{
+                width: 135%;
+                padding: 4%;
+                }
+            .img_holders img{
+                width: 100%;
+                clip-path: circle(40%);
+                }
+    @media screen and (min-width:480px){
+            .img_holders{
+                width: 15%;
+                margin: 3%;
+                box-shadow: 0px 2px 4px 3px rgb(12, 169, 43);
+                background-color: rgb(191, 93, 191);
+            }
+     h2{
+        color:rgb(147, 16, 16);
+             }
+}
+.sec_h{
+        text-align: center;
+    }
+    .img_holders img{
+       filter: grayscale(1);
+    }
+    
+    @media screen and (max-width:767px){
+        .img_holders{
+            width: 44%;
+            margin:2%;
+            box-shadow: 1px 2px 2px 2px rgb(255, 0, 128);
+        }
+        h2{
+            color:blue;
+        }
+        
+    }
+
+</style>
+</head>
+<body>
+    <section>
+        <h1 class="sec_h">Section Header</h1>
+        <div class="sec_container">
+        <div class="img_holders">
+            <img src="download.jpg"/>
+            <h2>Nature</h2>
+        </div>
+        <div class="img_holders">
+            <img src="flower.jpg" />
+            <h2>Flowers</h2>
+        </div>
+        <div class="img_holders">
+            <img src="lavander.jpg" />
+            <h2>Lavender</h2>
+        </div>
+        </div>
+    </section>  
+</body>
+</html>

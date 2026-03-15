@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructing Objects</title>
+</head>
+<script>
+        let obj1={f_name:"san", roll:33}
+        let var1=obj1.f_name;
+        let var2=obj1["roll"];
+        let {f_name,roll}=obj1;
+            console.log(f_name);
+            console.log(roll);
+        let obj={
+            s_name: "thosh",
+            std:7,
+            addition : {
+                country : "India",
+                state : "tn",
+                details:{
+                    code: "129",
+                    pincode:"600129"
+                }
+            }
+        }
+
+       let {s_name,std,addition:{ details:{code=value}, state=value, country}}=obj;
+            console.log(state);
+            console.log(code);
+            console.log(country);
+
+        var names = ["sun","fun","run","bun"];
+        var [,,t] = names;
+        var [x,y,...second] = names;
+            console.log( [a,b] = names);
+            console.log(second);
+            console.log(x);
+            console.log(y);
+        var[a,b,c,d]=names;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            console.log(a);
+    
+
+    let array1=[45,56,78,90]
+    let [,,var3,var4]=array1;
+        console.log(var1)
+        console.log(var2)
+        console.log(var3)
+
+
+    let obje={
+        roll_no:45,
+        fname:"raj"
+    }
+
+    let {roll_no,fname}=obje;
+        console.log(roll_no)
+        console.log(fname)
+
+    let obje1={
+        s_roll:75,
+        fullname:{
+        firstname:"Santhosh",
+        lastname:"kumar"
+        }
+    }
+
+    let{s_roll,age,fullname:{firstname=value,lastname=value}}=obje1
+        console.log(s_roll)
+        console.log(firstname)
+        console.log(lastname)
+
+/*object enhancement ->variable to object*/
+    var st_roll=57;
+    var s_age=22;
+    var s_firstname="rajesh"
+    var s_lastname="kannan"
+    let obje2={st_roll,s_age,s_firstname,s_lastname}
+        console.log(obje2)
+    </script>
+
+<script>
+        /* Array COPYING */
+
+let orgi=["alpha","beta"]
+let dub=orgi;
+    console.log(orgi)
+    console.log(dub)
+    dub.push("78")
+    console.log(orgi)
+    console.log(dub)
+ 
+
+let dub1=[...orgi]; // let dub1=[...orgi]
+
+    dub1.push("96")
+//console.log(dub)
+    console.log(orgi) 
+    console.log(dub1)
+    orgi.push("hello")
+    console.log(orgi)
+    console.log(dub1) 
+
+
+    /* OBJECT COPYING */
+
+let objt1={roll:45}
+let objt2={...objt1}
+    console.log(objt1)
+    objt2.roll=56
+    console.log(objt2)
+
+    /* Array  MERGING */
+
+let array2=["raj","kannan"]
+let array3=[...array2,...orgi,...array2]
+    console.log(array3)
+
+/* OBJECT MERGING  */
+
+let obj3={age:23}
+let obj4={...obj1,...obj3,...objt2,...objt1}
+    console.log(obj4)
+
+
+var minn=Math.max(10,9,8,1,0)
+    console.log(minn)
+
+let arr1=[10,9,8,1,0];
+
+let minim=Math.min(...arr1)//
+    console.log(minim)
+
+/* spread in destuctring */
+
+let d_arr=[45,56,78,90,989];
+let [e,f,...g]=d_arr;
+    console.log(e)
+    console.log(f)
+    console.log(g)
+    
+let de_obj={
+    deroll:5,
+    sage:23,
+    fname:"ram",
+    state:'ap',
+    code:600065
+ }
+let {deroll,sage,...fn}=de_obj;
+    console.log(deroll)
+    console.log(sage)
+    console.log(fn)
+
+
+function added(...n) //rest parameter
+{
+    console.log(n);
+var m=0;
+    for(let i of n){
+m+=i;
+}
+return console.log(m);
+}
+added(1,2,3)
+added(1,2,3,4,5,6)
+
+g
+
+</script>
+
+
+<body>
+    </body>
+</html>

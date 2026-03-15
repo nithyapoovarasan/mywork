@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Table_forms</title>
+<header>
+    Table Information
+</header>
+    <style>
+        table {
+                border: 7px double #0066ff;
+                width: 95%;
+        }
+        th,td {
+            padding: 8px;
+            text-align: left;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+           
+        }
+        tr{
+            background-color: #7ba3a8;
+        }
+        .form_info {
+            margin: 10px;
+            padding-top: 1%;}
+        .form_info:hover {
+            border: 3px solid #11a01f;
+             box-shadow: 0px 1px 5px 8px palevioletred;
+        }
+            label {
+                display: inline-block;
+           
+            }
+        input {
+                padding: 4px;
+                max-width: 500px;
+                border-radius: 5px;
+            }
+        
+        header {
+            color: rgb(255, 0, 217);
+            font-size: 30px;
+            font-weight:bolder;
+            text-align: center;
+            margin-top: 10px;
+            
+        }
+        footer {
+            font-size: 10px;
+            font-style:roman;
+            text-align: right;
+            margin-bottom: 20px;
+            color: rgb(152, 65, 12);
+
+        }
+            
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Age</th>
+                <th>Email ID</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Naini</td>
+                <td>12-05-1998</td>
+                <td>25</td>
+                <td>naini@gmail.com</td>
+                <td>123456</td>
+            </tr>
+            <tr>
+                <td>Ravi</td>
+                <td>15-08-1997</td>
+                <td>26</td>
+                <td>ravi@gmail.com</td>
+                <td>789012</td>
+            </tr>
+            <tr>
+                <td>Aishu</td>
+                <td>20-11-1999</td>
+                <td>23</td>
+                <td>aishu@gmail.com</td>
+                <td>345678</td>
+            </tr>
+            </tbody>
+    </table><br>
+<form>
+        <h2>Registration Form</h2>
+        <div class="form_info">
+    <div class="form_info">
+        <label firstname="name">First Name:</label>
+        <input type="text" required><br>
+    </div>
+    <div class="form_info">
+        <label lastname="name">Last Name:</label>
+        <input type="text"><br>
+    </div>
+    <div class="form_info">
+        <label dob="dob">DOB:</label>
+        <input type="date"><br>
+    </div>
+    <div class="form_info">
+        <label age="age">Age:</label>
+        <input type="number"><br>
+    </div>
+    <div class="form_info">
+        <label email="email">Email ID:</label>
+        <input type="email"><br>
+    </div>
+    <div class="form_info">
+        <label password="password">Password:</label>
+        <input type="password"><br>
+    </div>
+    <div class="form_info">
+        <label>Gender:</label>
+        <label>Male</label>
+        <input type="radio" name="Gender" value="Male">
+        <label>Female</label>
+        <input type="radio" name="Gender" value="Female">
+    </div>
+        <center>
+            <button type="Submit">Submit</button>
+            <button type="Reset">Reset</button>
+        </center>
+</form>
+<footer>
+    End Of The Form and Table
+</footer>
+</body>
+</html>

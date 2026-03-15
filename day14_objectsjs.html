@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects in java script</title>
+    <script>
+        const obj={
+             roll_no : 22,
+             student_firstname : "Anu",
+             student_lastname : "priya",
+             fullname : function()
+            {
+                return this.student_firstname+" "+this.student_lastname;
+            }
+        }
+        let var1=obj.roll;
+        for(let i in obj)
+        {
+            console.log(i+""+obj[i]);
+
+        }
+        var1="welcome"
+        console.log(var1);
+            obj.roll=25;
+        alert(obj.student_firstname);
+            console.log(obj["roll"]);
+            console.log(obj.fullname());
+        let array1=[22,"priya",true,null]
+            console.log(array1["1"])
+            array1["1"]="Anu";
+            array1["5"]=25;
+            console.log(array1);
+        for(i=0;i<array1.length;i++){
+            console.log(array1[i]);
+            }
+        let array2=new Array("keerthi",15,true)
+        console.log(array2);
+        for(i=0;i<array2.length;i++){
+            console.log(array2[i]);
+            }
+        let string1="javascript"
+        for(let i of string1){
+            console.log(i);
+        }
+    </script>
+</head>
+<body>
+            <p id="demo">
+            </p>
+    <script>
+        document.getElementById("demo").innerText=array1;
+        document.getElementById("demo").innerText=array2
+            </script>
+    
+</body>
+</html>

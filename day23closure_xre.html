@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+function a(){
+ let i=1;
+    function b(){
+        i+=4;
+          console.log(i)
+    }
+    return b;
+}
+let var1 =a();
+var1();
+var1();
+var1();
+var1();
+var1();
+let xre=new XMLHttpRequest();
+        xre.open("GET", "https://api.github.com/users/ayushsnha",true);
+        xre.onload=function(e){
+            console.log(e)
+            console.log(e.target.responseText)
+
+        }
+        xre.send();
+    </script>
+<body>
+    
+</body>
+</html>

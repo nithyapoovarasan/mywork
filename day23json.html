@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    <div class="details">
+	<table border="2" id="table_details">
+		<tr>
+			<td>Fullname</td>
+			<td><span id="fullname"></span></td>
+			<td><button id=""> edit </button></td>
+        </tr>
+		<td>Login</td>
+		<td><span id="login"></span></td>
+		</tr>	
+		<tr>
+		<td>ID</td>
+		<td><span id="age"></span></td>
+		</tr>
+		<tr>
+		<tr>
+		<td>Location</td>
+		<td><span id="location"></span></td>
+		</tr>
+		<tr>
+		<td>Bio-Data</td>
+		<td><span id="bio"></span></td>
+		</tr>
+	</table>
+	</div>
+<script>
+         
+        let obj={
+            fname:"kumar",
+            age:21
+        }
+      let json_obj={
+            "fname":"aachu",
+            "age":24
+        }
+        console.log(obj)
+        console.log(json_obj);
+
+    let jobj=parseInt(obj)
+        console.log(jobj) 
+        
+    let xre=new XMLHttpRequest();
+        xre.open("GET", "https://api.github.com/users/ayushsnha",true);
+        xre.onload=function(e){
+            let result_Data =e.target.responseText;
+            let data=JSON.parse(result_Data)
+            let {id,location,name,login,bio}=data;
+            document.querySelector("#fullname").innerText=name;   
+            document.querySelector("#age").innerText=id;   
+            document.querySelector("#bio").innerText=bio;   
+            document.querySelector("#login").innerText=login;   
+            document.querySelector("#location").innerText=location;   
+    
+            }
+        xre.send();
+    </script>
+</body>
+</html>
+				

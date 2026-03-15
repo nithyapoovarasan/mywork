@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in Java script</title>
+</head>
+<script>
+    function cilcked()
+    {
+        alert ("Welcome");
+    }
+    function dblclick()
+    {
+        alert("double  hai");
+    }
+    function changed()
+    {
+        alert("changed or blur");
+    }
+    function win()
+    {
+        alert("Window Loaded");
+    }
+    
+</script>
+<body onload="cilcked()">
+        <button onclick="win()">Click</button>
+        <button ondblclick="dblclick()">click here</button>
+        <input onblur="changed()" type="text" />
+        <label id="lbl">hello</label>
+        <button id="myBtn">Time is?</button>
+        <p id="demo"></p>
+        
+    <input type="text"id="myInput" oncopy="myfunction()" value="Try to Copy me">
+    <input type="text"id="myInput" value="Paste Something Here" size="40">   
+    <div id="div_ele"  style="width: 200px; height:200px; background-color: aqua;">
+        <p id="para"></p>
+    </div>
+<script>
+    const Btn=document.getElementById("myBtn");
+        Btn.addEventListener("Click ",function(){
+        document.getElementById("demo").innerHTML="Date";
+        });
+
+        document.getElementById("demo").addEventListener("dblclick",myfunction);
+            function myfunction(){
+        document.getElementById("demo").innerHTML="I was Double clicked!";
+            };
+
+        document.getElementById("myInput").onpaste=function(){
+            myfunction()
+            };
+        document.getElementById("myInput").addEventListener("Copy",myfunction);
+            function myfunction(){
+        document.getElementById("demo").innerHTML="you copied text!"
+            };
+            document.getElementById("myInput").addEventListener("paste",myfunction);
+            function myfunction(){
+        document.getElementById("demo").innerHTML="you pasted text!"
+            };
+        
+    var div1=  document.getElementById("div_ele");
+        div1.addEventListener("mouseout",function mouseop(){
+        alert("mouse out ");
+        })
+        div1.addEventListener("mouseenter",function mouseed(){
+        div1.style.backgroundColor="red";
+        })
+        div1.addEventListener("mouseover",function mouseop(){
+        div1.style.width="300px";
+        })
+        div1.addEventListener("click",function mouseed(){
+            alert("hai");
+        div1.style.transform="rotate(90deg)"
+        })
+
+
+         /*document.getElementById("div_el").addEventListener("mousein",mousein);   
+         document.getElementById("div_el").addEventListener("mouseout",mouseout);  
+         function mousein(){
+            document.getElementById("div_el").style.color="red";
+         } 
+         function mouseout(){
+            document.getElementById("div_el").style.color="pink";
+         }*/ 
+            
+   
+
+</script>
+</body>
+</html>

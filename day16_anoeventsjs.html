@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> On DoubleClick Event</h1>
+    <h2> On Copy Event</h2>
+    <p id="demo"></p>
+    <input type="text"id="myInput" oncopy="myfunction()" value="Try to Copy me">
+</body>
+<script>
+            document.getElementById("demo").addEventListener("dblclick",myfunction);
+    function myfunction(){
+            document.getElementById("demo").innerHTML="I was Double clicked!";
+
+            document.getElementById("myInput").onpaste=function(){
+            myfunction()
+            }
+            document.getElementById("myInput").addEventListener("Copy",myfunction);
+        function myfunction(){
+            document.getElementById("demo").innerHTML="you copied text!"
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>Age Predictor</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+
+    <h2>Age Prediction App</h2>
+
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button id="predictBtn">Predict Age</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        $("#predictBtn").click(function() {
+
+            let name = $("#nameInput").val();
+
+            $.ajax({
+                url: "https://api.agify.io/?name=" + name,
+                type: "GET",
+                success: function(data) {
+                    $("#result").text("Predicted Age: " + data.age);
+                },
+                error: function() {
+                    $("#result").text("Something went wrong!");
+                }
+            });
+
+        });
+   
+
+        async function predictAge() {
+            try {
+                let name = document.getElementById("nameInput").value;
+        
+
+                let response = await fetch("https://api.agify.io/?name=" + name);
+                let data = await response.json();
+
+                document.getElementById("result").innerText =
+                    "Predicted Age: " + data.age;
+
+            } catch (error) {
+                document.getElementById("result").innerText =
+                    "Error fetching data!";
+            }
+        }
+    
+    </script>
+</body>
+</html>
+
+
+

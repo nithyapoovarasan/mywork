@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Conversion</title>
+</head>
+<script>
+    /*multi-string*/
+    let a=20;
+    let b=40;
+    let str=`hell0 ${a}
+                Multi  
+                string`;
+    console.log(str);
+
+/* implicit type conversion */
+    let x=6;
+    let y="30";
+        console.log(typeof(y));
+        x+=y; 
+        console.log(typeof(y));
+        x-=y;
+        console.log(typeof(x));
+        x*=y;
+        console.log(typeof(x)); 
+
+/* manual conversion */
+
+    let var1=45;
+    let boolan=true;
+    var var2 =String(boolan);
+        console.log(typeof(var2));
+    
+    var3="45";
+    var4=Number(var3);
+        console.log(typeof(var4));
+    
+    var5="75";
+    var6=Number(var5);
+        console.log(typeof(var5));
+        console.log(typeof(var6));
+        console.log(var6)
+    
+    var5="27.3";
+    var6=Number(var5);
+        console.log(typeof(var5));
+        console.log(typeof(var6));
+        console.log(var6)
+    
+    var5="goat";
+    var6=Number(var5);
+        console.log(typeof(var5));
+        console.log(typeof(var6));
+        console.log(var6)
+
+    var6=Number(boolan)
+        console.log(typeof(boolan));
+        console.log(typeof(var6));
+        console.log(var6)
+   
+    var6=9; 
+    var7=var6.toString();
+        console.log(typeof(var7))
+        console.log(Boolean(var6));
+
+    </script>
+
+<body>
+    
+</body>
+</html>

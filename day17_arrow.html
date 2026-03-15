@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow</title>
+    <script>
+        function add(x,y){
+            return console.log(x+y);
+        }
+            add(6,4);
+        let add1=()=>6+4;
+        let array12=[25,40,52,65]
+        let tot1=0;
+            array12.forEach(function sum(v){ //FOREACH FUNCTION
+            tot1+=v;
+        })
+            console.log(tot1);
+
+        let array1=[45,67,78,15]
+        let tot=0;
+        array1.forEach((v)=>{ //  arrow function in forEach
+        tot+=v;
+        })
+            console.log(tot);
+        let array2=array1.map(function(v){ //  Map function
+            return v-10;
+        }) 
+
+
+        let array3=array1.map((v)=>{ //  arrow function in Map
+            return v/10;
+        })
+            console.log(array2);
+            console.log(array3);
+        let obj=[
+            {name:"priyan",roll:45},
+            {name:"eniyan",roll:4}
+            ]
+        let obj_names=obj.map((v)=>v.name) //  arrow function in object using MAP
+            console.log(obj_names)
+            obj.forEach(v=> console.log(v.name+" "+v.roll)) //  arrow function in  object using forEach
+</script>
+
+</head>
+<body>
+
+    
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Login</title>
+	<style>
+		:root{--bg:#f3f4f6;--card:#fff;--accent:#2563eb;--danger:#ef4444;--ok:#16a34a}
+		html,body{height:100%;margin:0;font-family:Segoe UI,Roboto,Helvetica,Arial}
+		.wrap{min-height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg)}
+		.card{background:var(--card);padding:28px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,.08);width:360px}
+		h1{margin:0 0 18px;font-size:20px;color:#111827}
+		label{display:block;font-size:13px;margin:10px 0 6px;color:#374151}
+		input[type="text"],input[type="password"]{width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:6px;font-size:14px}
+		button{margin-top:16px;width:100%;padding:10px;border:0;border-radius:6px;background:var(--accent);color:#fff;font-weight:600;cursor:pointer}
+		.msg{margin-top:12px;padding:10px;border-radius:6px;font-size:14px;display:none}
+		.msg.error{background:#fff1f2;color:var(--danger);border:1px solid #fecaca;display:block}
+		.msg.ok{background:#ecfdf5;color:var(--ok);border:1px solid #bbf7d0;display:block}
+		.muted{font-size:13px;color:#6b7280;margin-top:8px;text-align:center}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="card" role="main">
+			<h1>Sign in to your account</h1>
+			<form id="loginForm" novalidate>
+				<label for="username">Username</label>
+				<input id="username" name="username" type="text" autocomplete="username" required>
+
+				<label for="password">Password</label>
+				<input id="password" name="password" type="password" autocomplete="current-password" required>
+
+				<button type="submit">Sign In</button>
+				<div id="message" class="msg" role="status" aria-live="polite"></div>
+			</form>
+			<div class="muted">Demo: try username <strong>alice</strong> / password <strong>password123</strong></div>
+		</div>
+	</div>
+
+	<script>
+		(function(){
+			const USERS = { alice: 'password123', bob: 'qwerty' };
+			const maxAttempts = 3;
+			let attempts = 0;
+
+			const form = document.getElementById('loginForm');
+			const uField = document.getElementById('username');
+			const pField = document.getElementById('password');
+			const msg = document.getElementById('message');
+
+			function showMessage(text, type){
+				msg.textContent = text;
+				msg.className = 'msg ' + (type === 'ok' ? 'ok' : 'error');
+				msg.style.display = 'block';
+			}
+
+			function clearMessage(){ msg.style.display = 'none'; msg.textContent = ''; }
+
+			form.addEventListener('submit', function(e){
+				e.preventDefault();
+				clearMessage();
+
+				const username = uField.value.trim();
+				const password = pField.value;
+
+				if(!username || !password){
+					showMessage('Please enter both username and password.', 'error');
+					return;
+				}
+
+				if(!Object.prototype.hasOwnProperty.call(USERS, username)){
+					showMessage('Username not found. Check the username and try again.', 'error');
+					return;
+				}
+
+				if(USERS[username] !== password){
+					attempts += 1;
+					const left = Math.max(0, maxAttempts - attempts);
+					if(attempts >= maxAttempts){
+						showMessage('Too many failed attempts. Account locked for this session.', 'error');
+						form.querySelector('button').disabled = true;
+						uField.disabled = true;
+						pField.disabled = true;
+					} else {
+						showMessage('Incorrect password. ' + left + ' attempt' + (left===1?'':'s') + ' left.', 'error');
+					}
+					return;
+				}
+
+				showMessage('Login successful — redirecting...', 'ok');
+				form.querySelector('button').disabled = true;
+				setTimeout(()=>{
+					uField.value = '';
+					pField.value = '';
+					clearMessage();
+					alert('Logged in as ' + username + ' (demo)');
+				},700);
+			});
+		})();
+	</script>
+</body>
+</html>
+

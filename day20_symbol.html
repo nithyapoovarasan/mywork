@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 20</title>
+    <script>
+        let x=Symbol("a");
+        console.log(x)
+        console.log(typeof(x))
+        let y=Symbol("a")
+        console.log(y)
+        if(x==y){
+            console.log("true")
+        }
+        else{
+            console.log("false")
+        }
+        let roll_no=Symbol("roll_no");
+        let per_obj={
+            [roll_no]:33,
+            age:13,
+            gender:"male"
+        }
+        console.log(per_obj)
+        console.log(per_obj.age,per_obj["gender"],per_obj[roll_no])
+        for (let i in per_obj){
+           console.log(per_obj[i])
+        }
+        let per_obj2={
+            [roll_no]:44,
+            age:14,
+            gender:"male"
+        }
+        let lib_obj={
+            roll_no:44,
+            book_taken:3
+        }
+        let mer_obj={...per_obj2,...lib_obj}
+        console.log(mer_obj);
+    
+//let p = new Promise((resolve,reject)=>{
+    /*function getData(){
+        return new Promise((resolve,reject)=>{
+        let x=35;
+        let y=4;
+            if(x==y){
+                resolve("log")
+            }
+            else{
+                reject("error in code")
+            }
+        });
+    }*/
+
+/*function getData(cal) {
+        return new Promise((resolve,reject)=>{    
+    let x=35;
+    let y="45";
+if(x==y){
+    resolve("log")
+}
+else{
+    reject("error in code")
+}
+})
+} */
+
+function getData()
+    {
+        return new Promise((resolve)=>{
+        setTimeout(() => {
+        resolve("Data Received");},3000);
+        })
+    }   
+        getData().then((result)=>{
+        console.log("hello")
+    })
+        .catch((e)=>{
+        console.log(e);
+    }); 
+        getData().then((result)=>console.log(result))
+        .catch((e)=>{console.log(e)})
+
+
+function gettata(cal) {
+    return new Promise((resolve,reject)=>{
+        let a=45;
+        let b="45";
+    if(a===b){
+        resolve("log")
+    }
+    else{
+        reject("error")
+        }
+        })
+    }    
+    gettata().then((result)=>console.log(result))
+    .catch((e)=>{console.log(e)})
+    console.log("hello")
+</script>
+</head>
+<body>
+    <p> Spread</p>
+    <p> Promise</p>
+
+</body>
+</html>

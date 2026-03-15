@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <script>
+        let str1=" santhosh , kumar,ram, senthil , deav";
+        console.log()
+        console.log(str1.length);
+        let str2=str1.substring(3,6);
+        console.log(str2);
+        let str3=str1.slice(2,6)
+        console.log(str3);  
+        let str4=str1.substr(3,8);
+        console.log(str4);
+        let str5="    WELCOME  java    ";
+        console.log(str5.length);
+        let str6=str5.trim();
+        console.log(str6);
+        let str7=str5.trimStart();
+        console.log(str7);
+        let str8=str5.trimEnd();
+        console.log(str8);
+        let str9="script";
+        let str10=str9.padStart(8,"@");
+        console.log(str10);
+        let str11=str9.padEnd(11,"@");
+        console.log(str11);
+        let str12="ram ,kumar, senthil, RAM, ram, deav,santhosh";
+        let str13=str12.replace("ram","manoj");
+        console.log(str13);
+        let str14=str12.replaceAll("ram","madhan");
+        console.log(str14);
+        let str15=str12.charAt("6");
+        console.log(str15);
+        let str16=str12.charCodeAt("9");
+        console.log(str16);
+        let str17="ASCII code";
+        console.log(str17.toUpperCase());
+        console.log(str17.toLowerCase());
+        let str18=str17.concat(str5,str11,str16);
+        console.log(str18);
+        console.log(str18.length);
+        let array1=str1.split("s");
+        console.log(array1);
+    </script>
+</head>
+<body>
+    <p>Uses Of String Methods</p>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object and object-position</title>
+
+</head>
+<style>
+    img{
+       width: 250px ;
+       height: 200px;
+       object-fit: contain;
+       object-position: 50% 65%;
+    }
+    p{
+        display: inline-table;
+        width: 200%;
+        padding-left: 1%;
+        font-size: 40px;
+        font-style: italic;
+        color: rgb(21, 0, 128);
+    }
+    .para{
+        font-size: medium;
+    }
+    .img_holder{
+        box-shadow: 5px 9px 3px 4px #480a71;
+        padding-left: 4%;
+}
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 3% 2%;
+        background-color: rgb(134, 153, 50);
+    }
+    .items{
+        width: 29%;
+        padding: 1%;
+        margin: 0% 30%;
+        background-color: white;
+        box-shadow: 20px 10px 20px 20px #078e6a;
+    }
+    .img_hold img{
+        width: 100%;
+    }
+    .img_hold{
+        max-height: 160px;
+    }
+    .content_hold{
+        min-height: 30px;
+    }
+    .img_posi{
+        object-position: 50% 10%;
+    }
+</style>
+
+<body>
+    <div img_holder>
+        <img src="../img/download.jpg"/>        
+        <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Velit at enim minima, perspiciatis quidem soluta, quae harum facere nostrum 
+            architecto consequatur repellendus deleniti dolorum labore recusandae sit,eum blanditiis voluptate?</p>
+        </div>
+<section class="container">
+    <div class="items">
+        <div class="img_hold">
+        <img src="flower.jpg" >
+    </div>
+<div class="content_hold">
+            <p>
+                Flower
+            </p>
+</div>
+<div class="items">
+        <div class="img_hold ">    
+        <img class="img_posi" src="lavander.jpg" >
+</div>
+<div class="content_hold">
+    <p>
+        Lavender
+    </p>
+    </div>
+</div>
+</section> 
+</body>
+</html
