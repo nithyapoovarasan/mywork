@@ -2,9 +2,9 @@
 $conn = mysqli_connect("localhost","root","","testdb");
 
 if(!$conn){
-    echo "Connection Failed";
+    echo "Connection Failed.";
 }
 else{ 
-    echo "connected";
+    echo "connected succssfully.";
 }
 ?>
