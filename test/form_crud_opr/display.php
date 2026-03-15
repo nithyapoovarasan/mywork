@@ -16,11 +16,11 @@ echo "<tr>
 while($row = mysqli_fetch_assoc($result))
 {
 echo "<tr>";
-echo "<td>".$row['id']."</td>";
+echo "<td>".$row['stud_id']."</td>";
 echo "<td>".$row['name']."</td>";
 echo "<td>".$row['email']."</td>";
-echo "<td><a href='edit.php?id=".$row['id']."'>Edit</a></td>";
-echo "<td><a href='delete.php?id=".$row['id']."'>Delete</a></td>";
+echo "<td><a href='edit.php?id=".$row['stud_id']."'>Edit</a></td>";
+echo "<td><a href='delete.php?id=".$row['stud_id']."'>Delete</a></td>";
 echo "</tr>";
 }
 
